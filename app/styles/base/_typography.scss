@@ -1,0 +1,60 @@
+$gilroy: "../fonts/gilroy";
+$font-family-base: 'Gilroy';
+$font-family-bold: 'Gilroy Bold';
+
+@font-face {
+  src: url("#{$gilroy}/Gilroy-Light.otf") format("otf");
+  src: url("#{$gilroy}/Gilroy-Light.ttf") format("ttf"),
+  url("#{$gilroy}/Gilroy-Light.woff") format("woff");
+
+  font-family: $font-family-base;
+  font-weight: 100;
+}
+
+@font-face {
+  src: url("#{$gilroy}/Gilroy-ExtraBold.otf") format("otf");
+  src: url("#{$gilroy}/Gilroy-ExtraBold.ttf") format("ttf"),
+  url("#{$gilroy}/Gilroy-ExtraBold.woff") format("woff");
+
+  font-family: $font-family-bold;
+  font-weight: 100;
+}
+
+$font-size-basic: 1rem;
+$font-size-m: $font-size-basic * 1.25;  // 20
+$font-size-sm: $font-size-basic * 0.75; // 12
+$font-size-l: $font-size-basic * 1.875; // 30
+
+$line-height-base: 1;
+$line-height-sm: $line-height-base * 0.875;
+$line-height-l: $line-height-base * 1.5;
+
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+}
+
+%large-text {
+  font-size: $font-size-m;
+  line-height: $line-height-l;
+}
+
+.heading {
+  font-size: $font-size-l;
+  line-height: $line-height-l;
+  font-family: "Gilroy Bold";
+}
+
+.title {
+  @extend %large-text;
+  font-family: "Gilroy Bold";
+}
+
+.paragraph {
+  @extend %large-text;
+  font-weight: 500;
+}
+
+.text {
+  font-size: $font-size-sm;
+}

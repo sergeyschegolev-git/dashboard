@@ -1,0 +1,17 @@
+.main .audience {
+  table, tr, td {
+    border: 1px solid #EFF3F9;
+  }
+
+  table {
+    width: 100%;
+
+    tr {
+      height: 30px;
+    }
+
+    td {
+      width: calc(100% / 7);
+    }
+  }
+}

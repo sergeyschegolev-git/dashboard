@@ -1,0 +1,18 @@
+.ghost-button {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background: lighten(#ccc, 15);
+  }
+
+  svg {
+    color: $text-secondary-color-light;
+    width: 24px;
+    height: 24px;
+  }
+}

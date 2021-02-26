@@ -1,0 +1,87 @@
+@mixin applyThemes() {
+  @each $theme, $arr in $themes {
+    .theme-#{$theme} & {
+      $theme_name: $theme !global;
+      @content;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get(map-get($themes, $theme_name), $key);
+}
+
+$themes: (
+        light: (
+                background_main: $bg-primary-color-light,
+                background_secondary: $bg-secondary-color-light,
+                text_primary: $text-primary-color-light,
+                icon: $icon-color-light,
+                border: $border-light,
+                search_background: $bg-secondary-color-light,
+        ),
+        dark: (
+                background_main: $bg-primary-color-dark,
+                background_secondary: $bg-secondary-color-dark,
+                text_primary: $text-primary-color-dark,
+                icon: $icon-color-dark,
+                border: $border-dark,
+                search_background: $bg-primary-color-dark,
+        )
+);
+
+body {
+  @include applyThemes() {
+    color: t(text_primary);
+  }
+}
+
+.stats {
+  @include applyThemes() {
+    background: t(background_main);
+  }
+}
+
+.sidebar {
+  @include applyThemes() {
+    background: t(background_secondary);
+  }
+
+  .icon {
+    color: t(icon);
+  }
+}
+
+.card {
+  @include applyThemes() {
+    background: t(background_secondary);
+  }
+}
+
+.stats {
+  table, tr, td {
+    @include applyThemes() {
+      border-color: t(border);
+    }
+  }
+}
+
+.bar-chart {
+  @include applyThemes() {
+    background-color: t(background_main);
+    border-color: t(background_main);
+  }
+}
+
+.cell {
+  @include applyThemes() {
+    background-color: t(background_secondary);
+  }
+}
+
+.search {
+  @include applyThemes() {
+    background-color: t(search_background);
+    border-color: t(border);
+  }
+}

@@ -1,0 +1,24 @@
+.graphic {
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #7F7FD5;
+}
+
+.part {
+  width: 60px;
+  height: 60px;
+  background: #E786D7;
+  background-clip: padding-box;
+  clip-path: circle(107% at -50% -30%);
+  transform: rotate(-90deg) skewY(40deg);
+  border: 5px solid #FDFDFF;
+  position: absolute;
+  top: -20px;
+  left: 66px;
+}

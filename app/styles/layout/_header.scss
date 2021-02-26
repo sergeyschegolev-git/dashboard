@@ -1,0 +1,40 @@
+.header {
+  margin-left: $sidebar-width;
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .notification {
+    position: relative;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: $text-secondary-color-light;
+    }
+
+    &__alert {
+      position: absolute;
+      left: 12px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: $attention-primary-color;
+      border: 2px solid $bg-primary-color-light;
+    }
+
+    &.active {
+      &__alert {
+        display: block;
+      }
+    }
+  }
+}

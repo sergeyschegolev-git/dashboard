@@ -1,0 +1,51 @@
+.sidebar {
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+
+  width: $sidebar-width;
+
+  &__logo {
+    margin: 0 auto;
+    width: 50px;
+    height: 35px;
+  }
+
+  .nav {
+    li {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+
+      .icon {
+        width: 25px;
+        height: 25px;
+      }
+
+      &.active:before {
+        position: absolute;
+        left: -4px;
+        content: '';
+        display: block;
+        border-right: 8px solid $attention-primary-color;
+        border-radius: 4px;
+        height: 100%;
+      }
+
+      &.active {
+        .icon {
+          color: $attention-primary-color;
+        }
+      }
+
+      &:hover {
+        .icon {
+          color: $attention-primary-color;
+        }
+      }
+    }
+  }
+}

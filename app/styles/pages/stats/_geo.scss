@@ -1,0 +1,21 @@
+.main .geo {
+  .column {
+    width: 50%;
+  }
+
+  .bar {
+    $border-radius: 6px;
+    width: 100%;
+    background: $attention-secondary-color;
+    height: 10px;
+    border-radius: $border-radius;
+
+
+    .progress {
+      height: 100%;
+      width: 67%;
+      background: $attention-primary-color;
+      border-radius: $border-radius;
+    }
+  }
+}

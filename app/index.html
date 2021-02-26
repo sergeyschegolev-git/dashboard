@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <div class="stats">
+            @@include('./sidebar.html')
+            @@include('./header.html')
+            <div class="main">
+                <div class="container">
+                    <div class="row mt-6 gx-6 gy-6 gy-lg-0">
+                        @@loop("./stat-card.html", "./data/stats.json")
+                    </div>
+                    <div class="row mt-6 gx-6 gy-6 gy-xl-0">
+                        <div class="col-lg-12 col-xl-9">
+                            @@include('./audience.html')
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            @@include('./device.html')
+                        </div>
+                    </div>
+                    <div class="row mt-6 gx-6 gy-6 gy-lg-0">
+                        <div class="col-lg-8 col-md-12">
+                            @@include('./gender.html')
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            @@include('./geo.html')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const switcher = document.getElementById('switcher');
+        const html = document.querySelector('html');
+
+        switcher.addEventListener('click', () => {
+          html.classList.toggle('theme-dark');
+        })
+    </script>
+</body>
+</html>

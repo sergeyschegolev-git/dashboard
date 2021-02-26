@@ -1,0 +1,159 @@
+.search {
+  position: relative;
+  border-radius: 8px;
+  height: 32px;
+  font-size: $font-size-sm;
+  border: 1px solid;
+  width: 150px;
+
+  &-icon {
+    top: 9px;
+    left: 16px;
+    position: absolute;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  input {
+    background: inherit;
+    padding-left: 38px;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: $text-secondary-color-light;
+
+    &::placeholder {
+      color: $text-secondary-color-light;
+    }
+  }
+}
+
+%hidden-checkbox {
+  input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+%checkbox {
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 5px;
+      display: block;
+      margin-right: 8px;
+    }
+  }
+
+  @extend %hidden-checkbox;
+}
+
+@mixin checkbox-colored($color) {
+  label {
+
+    &:before {
+      border: 1px solid #{$color};
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked+label {
+      &:before {
+        background: #{$color};
+      }
+    }
+  }
+}
+
+@mixin checkbox-iconed {
+  label {
+
+    &:before {
+      border: 1px solid $attention-primary-color;
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked+label {
+      &:before {
+        background: url("../images/check.svg") center no-repeat;
+      }
+    }
+  }
+}
+
+.checkbox__first-option {
+  @extend %checkbox;
+  @include checkbox-colored($attention-secondary-color);
+}
+
+.checkbox__second-option {
+  @extend %checkbox;
+  @include checkbox-colored($attention-primary-color);
+}
+
+.checkbox__checkmark {
+  @extend %checkbox;
+  @include checkbox-iconed;
+}
+
+.switcher {
+  @extend %hidden-checkbox;
+  $width: 60px;
+  $button-width: 20px;
+  $padding-x: 8px;
+
+  .control {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: $width;
+    height: 30px;
+    border: 1px solid #4F4F4F;
+    border-radius: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    background: #FDFDFF;
+    transition: background .5s;
+
+    &:after {
+      content: url("../images/moon.svg");
+      width: $button-width;
+      height: $button-width;
+      border-radius: 50%;
+      background: $attention-primary-color;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 4px;
+      transform: translateX($padding-x);
+      transition: transform .5s;
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked+.control {
+      background: #7F7FD5;
+
+      &:after {
+        content: '';
+        border: 3px solid #FDFDFF;
+        transform: translateX($width - $button-width - ($padding-x));
+      }
+    }
+  }
+}

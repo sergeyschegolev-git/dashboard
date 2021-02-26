@@ -1,0 +1,17 @@
+@import "graphic-card";
+@import "geo";
+@import "gender";
+@import "device";
+
+.stats {
+  min-height: 100vh;
+
+  .community-info_dynamic {
+    color: $text-secondary-color-light;
+
+    .icon {
+      width: 15px;
+      height: 16px;
+    }
+  }
+}

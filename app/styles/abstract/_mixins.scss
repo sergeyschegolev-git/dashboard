@@ -1,0 +1,16 @@
+@mixin border($size, $color) {
+  border: #{$size} solid #{$color};
+}
+
+@mixin grid($columns, $width, $rows: 0, $rows-height: 0, $bg-color: false) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, $rows-height);
+  grid-gap: 1px;
+  width: $width;
+
+  @if($bg-color) {
+    background: $bg-color;
+    border: 1px solid $bg-color;
+  }
+}

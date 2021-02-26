@@ -1,0 +1,76 @@
+.main {
+
+  %bar-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .bar-chart {
+    @extend %bar-grid;
+    grid-template-rows: repeat(2, 52px);
+    grid-gap: 1px;
+    border: 1px solid;
+  }
+
+  .bar-chart-age {
+    @extend %bar-grid;
+    justify-items: center;
+  }
+
+  .age-stats {
+    width: 25%;
+  }
+
+  .women-24-27 {
+    height: 100px;
+  }
+
+  .men-24-27 {
+    height: 59px;
+  }
+
+  .women {
+    background-color: $attention-secondary-color;
+  }
+
+  .men {
+    background-color: $attention-primary-color;
+  }
+
+  .start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .first,
+  .second {
+    position: relative;
+  }
+
+  %positioned {
+    display: block;
+    position: absolute;
+  }
+
+  .first:before {
+    @extend %positioned;
+    content: '40% -';
+    top: -9px;
+    left: -43px;
+  }
+
+  .second:before {
+    @extend %positioned;
+    content: '0% -';
+    top: 52px;
+    left: -34px;
+  }
+
+  .first:after {
+    @extend %positioned;
+    content: '20% -';
+    top: 52px;
+    left: -43px;
+  }
+}

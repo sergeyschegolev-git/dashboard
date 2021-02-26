@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Friends",
+    "quantity": 271,
+    "growth": "+ 0.7%",
+    "icon": "./images/stroked-sprite.svg#arrow-up"
+  },
+  {
+    "title": "Unique visitors",
+    "quantity": 69,
+    "growth": "- 1.7%",
+    "icon": "./images/stroked-sprite.svg#arrow-down"
+  },
+  {
+    "title": "Followers",
+    "quantity": 288,
+    "growth": "+ 1%",
+    "icon": "./images/stroked-sprite.svg#arrow-up"
+  }
+]
